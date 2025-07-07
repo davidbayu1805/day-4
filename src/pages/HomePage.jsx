@@ -11,12 +11,7 @@ const HomePage = () => {
               Hi welcome to my hut
             </h1>
             <p className="text-base/8 mb-7 text-justify">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-              eveniet, iure nemo nostrum consequuntur quas excepturi accusamus
-              qui incidunt nobis, numquam laborum repellat perferendis ad? Neque
-              doloribus atque sequi consequuntur minus eum numquam explicabo
-              repudiandae quisquam tenetur iusto quam veritatis impedit animi,
-              repellendus debitis vel autem labore quia amet expedita!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis cupiditate rerum autem doloribus magnam at labore provident soluta laborum, odio accusamus maiores architecto mollitia. Deleniti laborum nam explicabo quae quas, deserunt est quos doloremque rerum vitae delectus, quis veritatis error adipisci dolor. Veniam eligendi pariatur dolorum delectus a adipisci nesciunt itaque, enim, accusantium provident ex impedit dicta veritatis ab asperiores, tempora odit! Fugiat quo id rerum odio magnam, nam odit.
             </p>
             {/* Tombol Contact dan Download */}
             <div className="flex flex-col gap-3">
