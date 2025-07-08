@@ -2,64 +2,70 @@ import Project1 from "../assets/images/proyek-1.webp";
 
 const HomePage = () => {
   return (
-    <div className="homepage pb-10 px-6 sm:px-8 md:px-12">
-      <div className="container mx-auto">
-        <div className="hero pt-24 flex justify-center">
-          <div className="box max-w-3xl w-full">
-            <h1 className="lg:text-5xl/tight text-3xl font-medium mb-7">
-              Hi welcome to my hut
+    <div className="homepage bg-gray-100 min-h-screen py-10 px-4 sm:px-6 md:px-12">
+      <div className="bg-white shadow-lg rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-12">
+          <div className="box w-full">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6">
+              Hi Welcome to my hut
             </h1>
-            <p className="text-base/8 mb-7 text-justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis cupiditate rerum autem doloribus magnam at labore provident soluta laborum, odio accusamus maiores architecto mollitia. Deleniti laborum nam explicabo quae quas, deserunt est quos doloremque rerum vitae delectus, quis veritatis error adipisci dolor. Veniam eligendi pariatur dolorum delectus a adipisci nesciunt itaque, enim, accusantium provident ex impedit dicta veritatis ab asperiores, tempora odit! Fugiat quo id rerum odio magnam, nam odit.
+            <p className="text-gray-700 text-base leading-relaxed mb-8 text-justify">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              tristique purus orci libero egestas ut. Augue suspendisse blandit
+              lorem massa ipsum, urna, egestas mi, lacinia. Dui fusce etiam
+              libero, lectus amet, risus molestie malesuada. Odio nam purus
+              consectetur euismod congue leo quisque. Turpis amet sollicitudin
+              nunc non in lectus dolor amet. Amet ullamcorper faucibus tincidunt
+              accumsan ac adipiscing arcu. Donec tristique at proin maecenas.
+              Ante elit et iaculis ac sit.
             </p>
-            <div className="flex flex-col gap-3">
+
+            <div className="flex flex-wrap gap-4 mb-6">
               <a
                 href="https://www.linkedin.com/in/david-bayu"
-                className="bg-black hover:bg-gray-400 transition-all py-2 px-4 text-white shadow rounded-full w-fit"
+                className="bg-gray-900 text-white font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-700 transition-all"
               >
-                Contact
+                contact
               </a>
               <a
                 href="/CV.pdf"
                 download="David-Bayu-CV.pdf"
-                className="text-base/8 text-black hover:none flex items-center gap-1"
+                className="flex items-center gap-2 text-gray-800 font-medium"
               >
-                Download CV <i className="ri-download-2-line"></i>
+                download CV <i className="ri-download-2-line text-lg"></i>
+              </a>
+            </div>
+
+            <div className="flex gap-4 text-2xl text-black">
+              <a href="https://www.linkedin.com/in/david-bayu">
+                <i className="ri-linkedin-box-fill hover:text-blue-600 transition"></i>
+              </a>
+              <a href="https://www.instagram.com/crish00_?igsh=MXcxbzV3OXg3ZzQwZw==">
+                <i className="ri-instagram-fill hover:text-pink-500 transition"></i>
+              </a>
+              <a href="#">
+                <i className="ri-facebook-box-fill hover:text-blue-800 transition"></i>
+              </a>
+              <a href="#">
+                <i className="ri-twitter-fill hover:text-sky-500 transition"></i>
+              </a>
+              <a href="https://github.com/davidbayu1805">
+                <i className="ri-github-fill text-2xl text-gray-800"></i>
               </a>
             </div>
           </div>
-        </div>
 
-        <div className="flex justify-center gap-6 text-2xl text-black mb-2">
-          <a href="https://www.linkedin.com/in/david-bayu">
-            <i className="ri-linkedin-box-fill hover:text-blue-600 transition"></i>
-          </a>
-          <a href="https://www.instagram.com/crish00_?igsh=MXcxbzV3OXg3ZzQwZw==">
-            <i className="ri-instagram-fill hover:text-pink-500 transition"></i>
-          </a>
-          <a href="#">
-            <i className="ri-facebook-box-fill hover:text-blue-800 transition"></i>
-          </a>
-          <a href="#">
-            <i className="ri-twitter-fill hover:text-sky-500 transition"></i>
-          </a>
-          <a href="https://github.com/davidbayu1805">
-            <i className="ri-github-fill text-2xl text-gray-800"></i>
-          </a>
-        </div>
-
-        <div className="profile flex justify-center pt-5" id="Profile">
-          <div className="profile-box w-full">
-            <div className="box p-4 bg-white shadow max-w-xs rounded-2xl mx-auto">
+          <div className="flex justify-center -mt-5" id="Profile">
+            <div className="bg-white shadow-md rounded-xl overflow-hidden max-w-xs w-full">
               <img
                 src={Project1}
                 alt="Profile image"
-                className="w-full h-[220px] object-cover rounded-2xl"
+                className="w-full h-[260px] object-cover"
               />
-              <h3 className="text-xl font-bold mt-6 mb-2 text-center">
-                David Bayu Cristanto
-              </h3>
-              <p className="text-base/loose text-center">Fullstack Developer</p>
+              <div className="p-4 text-center">
+                <h3 className="text-lg font-bold mb-1">David Bayu Cristanto</h3>
+                <p className="text-sm text-gray-600">Fullstack Developer</p>
+              </div>
             </div>
           </div>
         </div>
