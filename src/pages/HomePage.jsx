@@ -6,7 +6,7 @@ const HomePage = () => {
       <div className="bg-white shadow-lg rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-12">
           <div className="box w-full">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
               Hi Welcome to my hut
             </h1>
             <p className="text-gray-700 text-base leading-relaxed mb-8 text-justify">
@@ -20,23 +20,26 @@ const HomePage = () => {
               Ante elit et iaculis ac sit.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-6">
+            <div className="mb-3">
               <a
                 href="https://www.linkedin.com/in/david-bayu"
-                className="bg-gray-900 text-white font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-700 transition-all"
+                className="inline-block bg-gray-900 text-white font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-700 transition-all"
               >
                 contact
               </a>
+            </div>
+
+            <div className="mb-6">
               <a
                 href="/CV.pdf"
                 download="David-Bayu-CV.pdf"
-                className="flex items-center gap-2 text-gray-800 font-medium"
+                className="inline-flex items-center gap-2 text-gray-800 font-medium"
               >
                 download CV <i className="ri-download-2-line text-lg"></i>
               </a>
             </div>
 
-            <div className="flex gap-4 text-2xl text-black">
+            <div className="flex justify-center sm:justify-start gap-4 text-2xl text-black">
               <a href="https://www.linkedin.com/in/david-bayu">
                 <i className="ri-linkedin-box-fill hover:text-blue-600 transition"></i>
               </a>
