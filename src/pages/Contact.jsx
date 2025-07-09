@@ -18,7 +18,9 @@ const ContactPage = () => {
         </div>
 
         <div>
-          <label className="block mb-2 text-gray-700 font-semibold">Email</label>
+          <label className="block mb-2 text-gray-700 font-semibold">
+            Email
+          </label>
           <input
             type="email"
             placeholder="you@example.com"
@@ -27,7 +29,9 @@ const ContactPage = () => {
         </div>
 
         <div>
-          <label className="block mb-2 text-gray-700 font-semibold">Phone Number</label>
+          <label className="block mb-2 text-gray-700 font-semibold">
+            Phone Number
+          </label>
           <input
             type="tel"
             placeholder="08XXXXXXXXXX"
@@ -36,10 +40,10 @@ const ContactPage = () => {
         </div>
 
         <div>
-          <label className="block mb-2 text-gray-700 font-semibold">Subject</label>
-          <select
-            className="w-full bg-white rounded-lg px-4 py-2 shadow-md focus:outline-none focus:ring-2 focus:ring-sky-400 text-gray-700"
-          >
+          <label className="block mb-2 text-gray-700 font-semibold">
+            Subject
+          </label>
+          <select className="w-full bg-white rounded-lg px-4 py-2 shadow-md focus:outline-none focus:ring-2 focus:ring-sky-400 text-gray-700">
             <option value="" disabled selected hidden>
               Select Subject
             </option>
@@ -49,7 +53,9 @@ const ContactPage = () => {
         </div>
 
         <div>
-          <label className="block mb-2 text-gray-700 font-semibold">Your Message</label>
+          <label className="block mb-2 text-gray-700 font-semibold">
+            Your Message
+          </label>
           <textarea
             rows="6"
             placeholder="Write your message here..."

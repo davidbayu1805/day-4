@@ -5,7 +5,6 @@ const HomePage = () => {
     <div className="homepage bg-gray-100 min-h-screen pt-28 px-4 sm:px-6 md:px-12">
       <div className="bg-white shadow-lg rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-12">
-          {/* Kiri: Deskripsi dan Tombol */}
           <div className="box w-full">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
               Hi Welcome to my hut
@@ -21,7 +20,6 @@ const HomePage = () => {
               Ante elit et iaculis ac sit.
             </p>
 
-            {/* Tombol Kontak */}
             <div className="mb-3">
               <a
                 href="https://www.linkedin.com/in/david-bayu"
@@ -31,7 +29,6 @@ const HomePage = () => {
               </a>
             </div>
 
-            {/* Tombol Download CV */}
             <div className="mb-6">
               <a
                 href="/CV.pdf"
@@ -42,7 +39,6 @@ const HomePage = () => {
               </a>
             </div>
 
-            {/* Sosial Media */}
             <div className="flex justify-center sm:justify-start gap-4 text-2xl text-black">
               <a href="https://www.linkedin.com/in/david-bayu">
                 <i className="ri-linkedin-box-fill hover:text-blue-600 transition"></i>
@@ -62,7 +58,6 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* Kanan: Gambar Profil */}
           <div className="flex justify-center -mt-5" id="Profile">
             <div className="bg-white shadow-md rounded-xl overflow-hidden max-w-xs w-full">
               <img
