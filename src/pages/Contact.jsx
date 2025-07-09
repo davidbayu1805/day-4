@@ -35,7 +35,7 @@ const ContactPage = () => {
           <input
             type="number"
             placeholder="08XXXXXXXXXX"
-            className="w-full bg-white rounded-lg px-4 py-2 shadow-md focus:outline-none focus:ring-2 focus:ring-sky-400"
+            className="w-full bg-white rounded-lg px-4 py-2 shadow-md focus:outline-none focus:ring-2 focus:ring-sky-400 no-spinner"
           />
         </div>
 
