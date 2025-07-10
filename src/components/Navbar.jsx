@@ -42,7 +42,7 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="#project" className="hover:opacity-80">
+              <a href="/myproject" className="hover:opacity-80">
                 MyProject
               </a>
             </li>
