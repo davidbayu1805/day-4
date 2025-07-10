@@ -6,7 +6,7 @@ const techIcons = {
   "React Js": "ri-reactjs-line",
   "Next Js": "ri-nextjs-line",
   "Node Js": "ri-nodejs-line",
-  TypeScript: "ri-code-s-slash-line",
+  "TypeScript": "ri-code-s-slash-line",
 };
 
 const MyProject = () => {
