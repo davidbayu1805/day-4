@@ -73,7 +73,7 @@ const Navbar = () => {
           </li>
           <li className="flex items-center gap-3" onClick={handleToggle}>
             <i className="ri-image-line text-2xl"></i>
-            <a href="#">MyProject</a>
+            <a href="/myproject">MyProject</a>
           </li>
         </ul>
       </div>
