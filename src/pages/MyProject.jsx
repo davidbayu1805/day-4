@@ -72,6 +72,134 @@ const MyProject = () => {
     return `${months} month${months > 1 ? "s" : ""}`;
   };
 
+  // const [editIndex, setEditIndex] = useState(null);
+
+  const handleEdit = (index) => {
+    const project = projects[index];
+
+    Swal.fire({
+      title: "Edit Project",
+      width: "42rem",
+      html: `
+      <div class="grid gap-4 text-left text-sm text-gray-700">
+
+        <!-- Name -->
+        <div>
+          <label class="block mb-2 font-semibold" for="swal-name">Project Name</label>
+          <input id="swal-name" type="text" value="${
+            project.name
+          }" placeholder="Project Name"
+            class="swal2-input bg-white rounded-lg px-4 py-2 shadow w-full ml-auto" />
+        </div>
+
+        <!-- Date -->
+       <div class="flex flex-col sm:flex-row gap-4">
+          <div class="w-full sm:w-1/2">
+            <label class="block mb-2 font-semibold text-left" for="swal-start">Start Date</label>
+            <input
+              id="swal-start"
+              type="date"
+              value="${project.startDate}"
+              class="swal2-input bg-white rounded-lg px-4 py-2 shadow w-full" style="margin-left:auto"
+            />
+          </div>
+          <div class="w-full sm:w-1/2">
+            <label class="block mb-2 font-semibold text-left" for="swal-end">End Date</label>
+            <input
+              id="swal-end"
+              type="date"
+              value="${project.endDate}"
+              class="swal2-input bg-white rounded-lg px-4 py-2 shadow w-full" style="margin-left:auto"
+            />
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div>
+          <label class="block mb-2 font-semibold" for="swal-desc">Description</label>
+          <textarea id="swal-desc" rows="4" placeholder="Description"
+            class="swal2-textarea bg-white rounded-lg px-4 py-2 shadow w-full resize-none ml-auto">${
+              project.description
+            }</textarea>
+        </div>
+
+        <!-- Technologies -->
+        <div>
+          <label class="block mb-2 font-semibold">Technologies</label>
+          <div class="grid grid-cols-2 gap-2">
+            ${["React Js", "Next Js", "Node Js", "TypeScript"]
+              .map(
+                (tech) => `
+                <label class="flex items-center">
+                  <input type="checkbox" class="swal-tech mr-2" value="${tech}" 
+                    ${project.technologies.includes(tech) ? "checked" : ""} />
+                  ${tech}
+                </label>
+              `
+              )
+              .join("")}
+          </div>
+        </div>
+      </div>
+    `,
+      focusConfirm: false,
+      showCancelButton: true,
+      confirmButtonText: "Save",
+      customClass: {
+        confirmButton: "bg-black text-white rounded-full px-6 py-2",
+        cancelButton: "bg-gray-200 text-black rounded-full px-6 py-2 ml-2",
+      },
+      preConfirm: () => {
+        const checkedTechs = Array.from(
+          document.querySelectorAll(".swal-tech:checked")
+        ).map((el) => el.value);
+
+        const updated = {
+          ...project,
+          name: document.getElementById("swal-name").value,
+          startDate: document.getElementById("swal-start").value,
+          endDate: document.getElementById("swal-end").value,
+          description: document.getElementById("swal-desc").value,
+          technologies: checkedTechs,
+        };
+
+        updated.duration = getDuration(updated.startDate, updated.endDate);
+        updated.year = new Date(updated.startDate).getFullYear();
+
+        const updatedProjects = [...projects];
+        updatedProjects[index] = updated;
+        setProjects(updatedProjects);
+      },
+    });
+  };
+
+  const handleDelete = (index) =>{
+    Swal.fire({
+      title: "Apakah Kamu Yakin?",
+      text: "Data Project Ini Akan Terhapus Permanen",
+      icon:"warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor:"grey",
+      confirmButtonText:"Ya, Hapus!!!",
+      cancelButtonText:"Batal",
+    }).then((result) => {
+      if (result.isConfirmed){
+        const updatedProjects = [...projects];
+        updatedProjects.splice(index,1);
+        setProjects(updatedProjects);
+
+        Swal.fire({
+          icon:"Success",
+          title:"Berhasil Dihapus!!!",
+          text:"Data Project Berhasil Dihapus",
+          timer:1500,
+          showConfirmButton:false,
+        });
+      }
+    });
+  };
+
   const handleCardClick = (project) => {
     Swal.fire({
       title: `<strong style="font-size: 20px;">${project.name}</strong>`,
@@ -233,6 +361,7 @@ const MyProject = () => {
               {["React Js", "Next Js", "Node Js", "TypeScript"].map((tech) => (
                 <label key={tech} className="flex items-center">
                   <input
+                    id="technologies"
                     type="checkbox"
                     value={tech}
                     checked={form.technologies.includes(tech)}
@@ -260,6 +389,7 @@ const MyProject = () => {
               <i className="ri-attachment-2 text-xl text-gray-500 hover:text-black transition ml-4" />
             </div>
             <input
+              id="upload"
               type="file"
               name="image"
               accept="image/*"
@@ -310,10 +440,19 @@ const MyProject = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-[5px] mt-4">
-                <button className="bg-gray-900 text-white text-sm px-4 py-1 rounded hover:bg-black w-full sm:w-1/2">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleEdit(idx);
+                  }}
+                  className="bg-gray-900 text-white text-sm px-4 py-1 rounded hover:bg-black w-full sm:w-1/2"
+                >
                   Edit
                 </button>
-                <button className="bg-gray-900 text-white text-sm px-4 py-1 rounded hover:bg-black w-full sm:w-1/2">
+                <button onClick={(e) =>{
+                  e.stopPropagation();
+                  handleDelete(idx);
+                }} className="bg-gray-900 text-white text-sm px-4 py-1 rounded hover:bg-black w-full sm:w-1/2">
                   Delete
                 </button>
               </div>
