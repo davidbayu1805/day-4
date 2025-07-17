@@ -41,15 +41,21 @@ const Navbar = () => {
             <ul
               className={`fixed ${menuActive} top-1/2 -translate-y-1/2 flex flex-col gap-8 px-8 py-6 rounded shadow-g shadow-slate-300 bg-gray-400 font-bold text-white transition-all md:static md:flex-row md:flex md:items-center md:gap-12 md:p-0 md:m-0 md:w-auto md:h-full md:bg-transparent md:shadow-none md:text-black md:translate-y-0 md:transition-none md:ml-8`}
             >
-              <li className="flex items-center gap-3">
-                <i className="ri-home-2-line text-3xl md:hidden block"></i>
-                <a href="/" className="font-medium opacity-75">
+              <li>
+                <a
+                  href="/"
+                  className="flex items-center gap-3 font-medium opacity-75"
+                >
+                  <i className="ri-home-2-line text-3xl md:hidden block"></i>
                   Home
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <i className="ri-information-line text-3xl md:hidden block"></i>
-                <a href="myproject" className="font-medium opacity-75">
+              <li>
+                <a
+                  href="myproject"
+                  className="flex items-center gap-3 font-medium opacity-75"
+                >
+                  <i className="ri-folder-open-fill text-3xl md:hidden block"></i>
                   MyProject
                 </a>
               </li>
