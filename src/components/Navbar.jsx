@@ -61,7 +61,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="social flex items-center gap-2">
+          <div className="contact flex items-center gap-2">
             <a
               href="/contact"
               className="bg-gray-900 px-5 py-2 rounded-full text-white font-bold hover:bg-gray-700 transition-all"
